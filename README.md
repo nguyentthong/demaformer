@@ -177,8 +177,3 @@ The paper reports R1@0.5 / R1@0.7 of 62.39 / 43.94 on QVHighlights and 52.63 / 3
   year={2023}
 }
 ```
-
-## Caveats
-
-* This is an **unofficial** reimplementation. Numbers and detailed choices that aren't fully pinned down by the paper (e.g. exact NMS thresholds, exact LayerNorm placements) follow the conventions of Moment-DETR / UMT, which the paper builds on.
-* The Langevin sampler costs roughly `K × forward_through_salience_head` per training step. For `K=100`, expect training to be ~1.5× slower than a vanilla Moment-DETR-style trainer.
