@@ -1,0 +1,49 @@
+[project]
+name = "demaformer"
+version = "0.1.0"
+description = "DemaFormer: Damped Exponential Moving Average Transformer with Energy-Based Modeling for Temporal Language Grounding"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "DemaFormer authors" },
+]
+keywords = ["temporal-language-grounding", "video", "transformer", "energy-based-model"]
+
+dependencies = [
+    "torch>=2.1.0",
+    "numpy>=1.24.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+# Feature extraction (only needed if you want to re-extract features from raw videos)
+features = [
+    "decord>=0.6.0",
+    "Pillow>=10.0.0",
+    "transformers>=4.36.0",
+    "ftfy>=6.1.0",
+    "regex",
+    "librosa>=0.10.0",
+    "soundfile>=0.12.0",
+]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+demaformer-train = "scripts.train:main"
+demaformer-eval = "scripts.evaluate:main"
+demaformer-download = "scripts.download_data:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["demaformer"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
