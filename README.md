@@ -1,6 +1,6 @@
 # DemaFormer
 
-An official implementation of **DemaFormer: Damped Exponential Moving Average Transformer with Energy-Based Modeling for Temporal Language Grounding** (Nguyen et al., arXiv:2312.02549, 2023).
+An official implementation of **DemaFormer: Damped Exponential Moving Average Transformer with Energy-Based Modeling for Temporal Language Grounding** (EMNLP 2023, Findings).
 
 Given a natural-language query and a video, Temporal Language Grounding (TLG) asks: *which moments of the video correspond to the query?* DemaFormer addresses this with two ideas:
 
